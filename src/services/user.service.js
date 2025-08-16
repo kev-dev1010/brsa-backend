@@ -1,8 +1,9 @@
-// src/services/user.service.js
-const users = require('../models/User'); // Simula o DB
+const userRepository = require('../repositories/user.repository');
 
 function getAllUsers() {
-  // Retorna todos os usuários sem a senha
+  // Pega a lista completa de usuários do repositório
+  const users = userRepository.getAll();
+  // Usa .map() para iterar sobre a lista e criar uma nova lista sem a senha
   return users.map(user => {
     const { password, ...userWithoutPassword } = user;
     return userWithoutPassword;
@@ -10,31 +11,25 @@ function getAllUsers() {
 }
 
 function getUserById(id) {
-  const user = users.find(u => u.id === parseInt(id));
-  if (!user) return null;
-
+  const user = userRepository.getById(id);
+  if (!user) {
+    return null;
+  }
   const { password, ...userWithoutPassword } = user;
   return userWithoutPassword;
 }
 
 function updateUser(id, updatedData) {
-  const userIndex = users.findIndex(u => u.id === parseInt(id));
-  if (userIndex === -1) {
+  const updatedUser = userRepository.update(id, updatedData);
+  if (!updatedUser) {
     return null;
   }
-
-  users[userIndex] = { ...users[userIndex], ...updatedData };
-  const { password, ...updatedUserWithoutPassword } = users[userIndex];
+  const { password, ...updatedUserWithoutPassword } = updatedUser;
   return updatedUserWithoutPassword;
 }
 
 function deleteUser(id) {
-  const userIndex = users.findIndex(u => u.id === parseInt(id));
-  if (userIndex === -1) {
-    return false;
-  }
-  users.splice(userIndex, 1);
-  return true;
+  return userRepository.remove(id);
 }
 
 module.exports = {

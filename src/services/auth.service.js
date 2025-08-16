@@ -1,16 +1,15 @@
 // src/services/auth.service.js
-const users = require('../models/User'); // Simula o DB
+const userRepository = require('../repositories/user.repository');
 const tokenManager = require('../utils/tokenManager');
-const bcrypt = require('bcrypt'); // Adicione esta linha
+const bcrypt = require('bcrypt');
 
 async function login(username, password) {
-  const user = users.find(u => u.username === username);
-
+  const user = userRepository.getByUsername(username);
+  
   if (!user) {
     return { success: false, message: 'Usuário não encontrado.' };
   }
 
-  // Altere esta linha para usar bcrypt.compare
   const isPasswordCorrect = await bcrypt.compare(password, user.password);
   if (!isPasswordCorrect) {
     return { success: false, message: 'Senha incorreta.' };
@@ -21,28 +20,24 @@ async function login(username, password) {
   return { success: true, message: 'Login realizado com sucesso!', token };
 }
 
-async function register(username, password, role='customer') {
-  const existingUser = users.find(u => u.username === username);
+async function register(username, password, role = 'customer') {
+  const existingUser = userRepository.getByUsername(username);
   if (existingUser) {
     return { success: false, message: 'Nome de usuário já existe.' };
   }
 
-  // Criptografa a senha antes de "salvar"
   const hashedPassword = await bcrypt.hash(password, 10);
 
   const newUser = {
-    id: users.length + 1,
     username,
     password: hashedPassword,
-    role:role,
+    role: role,
   };
 
-  // Simula o salvamento no DB
-  users.push(newUser);
-
-  const token = tokenManager.generateToken({ id: newUser.id, role: newUser.role });
+  const createdUser = userRepository.create(newUser);
+  const token = tokenManager.generateToken({ id: createdUser.id, role: createdUser.role });
 
   return { success: true, message: 'Usuário registrado com sucesso!', token };
 }
 
-module.exports = { login, register }; // Exporte a nova função 'register'
+module.exports = { login, register };

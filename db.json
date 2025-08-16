@@ -1,0 +1,72 @@
+{
+  "users": [
+    {
+      "id": "c1f1f23c-f4f7-41a6-8e5f-14c1d68a27d5",
+      "username": "admin",
+      "password": "$2a$12$X82FNf8cw/FjbhQqXN67DuPmAmnLNsoGfHroNx4Ym0fCNmLlYzuXC",
+      "role": "admin"
+    },
+    {
+      "id": "e9a0e6b5-0b32-4d7a-8f0c-5d1e2f9d8a7c",
+      "username": "employee",
+      "password": "$2a$12$LqSlSYmnvmRz0bTwe3xn5uddU2VxCKiDK6238xydaQQQbNnuo9O8a",
+      "role": "employee"
+    },
+    {
+      "id": "3a6175a9-76ad-4668-a487-d4f29a45e37f",
+      "username": "kevin",
+      "password": "$2b$10$eG1KZzQuGnZdjiSKZ1ID2.SmZT0BJXRNaf1hiuEIrjQx28ZKPdFna",
+      "role": "customer"
+    },
+    {
+      "id": "a08003d7-843d-4e60-b194-63d21c986d51",
+      "username": "ju",
+      "password": "$2b$10$ZHzNWh42gIxRo85b5Vc7COpHftA08rUq0lxsZxg4.CKdbtjQWVxZi",
+      "role": "customer"
+    },
+    {
+      "id": "39f80396-5ad5-4a81-a403-330b801820d1",
+      "username": "etha",
+      "password": "$2b$10$rMyfe9/XPgiMH5ub4YmidecsRzvUYAP792Njdtg6P/KvcSUFrdE.G",
+      "role": "customer"
+    },
+    {
+      "id": "2b2a2c38-557c-4b3f-a14a-415144f4d737",
+      "username": "ticia",
+      "password": "$2b$10$UEYH/kMDINTjfl4Lsf8By.vAjClYbHyWjU7frJkZf0rT5z8gFz4LC",
+      "role": "customer"
+    },
+    {
+      "id": "12c6ace0-62a8-406b-b373-c2210a499798",
+      "username": "niet",
+      "password": "$2b$10$PncQn97H102qU63K9Ymld.V.1PuWGoUo/vy8/qY5SuHZ/WQ2bs/kG",
+      "role": "customer"
+    }
+  ],
+  "products": [
+    {
+      "id": "a1b2c3d4-e5f6-7890-1234-567890abcdef",
+      "name": "Vape - M4500",
+      "price": 99.9,
+      "stock": 50
+    },
+    {
+      "id": "b1c2d3e4-f5a6-7890-1234-567890abcde1",
+      "name": "E-Liquid - Menta",
+      "price": 39.9,
+      "stock": 100
+    },
+    {
+      "id": "40671d43-33bc-4ac9-88bd-4459744029e2",
+      "name": "vaca amarela",
+      "price": 344.9,
+      "stock": 370
+    },
+    {
+      "id": "a6ab9acd-7c4e-483d-a0ef-bfc15480a949",
+      "name": "vaca amarela",
+      "price": 344.9,
+      "stock": 370
+    }
+  ]
+}

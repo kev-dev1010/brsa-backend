@@ -54,10 +54,39 @@ async function createEmployee(req, res) {
   }
 }
 
+async function createCustomer(req, res) {
+  try {
+    const { username, password } = req.body;
+    // Chama o serviço de registro, mas força o papel 'customer'
+    const result = await authService.register(username, password, 'customer');
+
+    if (result.success) {
+      res.status(201).json({ success: true, message: 'Cliente criado com sucesso!' });
+    } else {
+      res.status(400).json(result);
+    }
+  } catch (error) {
+    res.status(500).json({ success: false, message: 'Erro interno no servidor.' });
+  }
+}
+
+function getProfile(req, res) {
+  // O middleware isAuthenticated já injetou o ID do usuário em req.user.id
+  const user = userService.getUserById(req.user.id);
+  if (user) {
+    res.status(200).json(user);
+  } else {
+    // Isso é improvável de acontecer se o token for válido
+    res.status(404).json({ message: 'Perfil não encontrado.' });
+  }
+}
+
 module.exports = {
   getAllUsers,
   getUserById,
   updateUser,
   deleteUser,
-  createEmployee // Adicione a nova função
+  createEmployee,
+  createCustomer,
+  getProfile 
 };
