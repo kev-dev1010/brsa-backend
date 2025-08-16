@@ -21,7 +21,7 @@ async function login(username, password) {
   return { success: true, message: 'Login realizado com sucesso!', token };
 }
 
-async function register(username, password) {
+async function register(username, password, role='customer') {
   const existingUser = users.find(u => u.username === username);
   if (existingUser) {
     return { success: false, message: 'Nome de usuário já existe.' };
@@ -34,7 +34,7 @@ async function register(username, password) {
     id: users.length + 1,
     username,
     password: hashedPassword,
-    role: 'employee',
+    role:role,
   };
 
   // Simula o salvamento no DB
