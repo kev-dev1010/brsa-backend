@@ -4,7 +4,7 @@ const users = [
   {
     id: 1,
     username: 'admin',
-    password: 'password123', // Senha sem hash por enquanto
+    password: '$2a$12$cFsYkPkWZLnKIA5UGUu6t.c477JK4Wst3xM7kctbEWc/fGAXdZdo6', // Senha sem hash por enquanto
     role: 'admin'
   }
 ];

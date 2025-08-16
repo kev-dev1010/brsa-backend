@@ -7,6 +7,8 @@ const authRoutes = require('./auth.routes');
 
 // Monta as rotas
 router.use('/auth', authRoutes);
+console.log(authRoutes);
+
 
 // Rota de teste
 router.get('/', (req, res) => {
