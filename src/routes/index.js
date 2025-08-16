@@ -2,15 +2,12 @@
 const express = require('express');
 const router = express.Router();
 
-// Importa as rotas de autenticação
 const authRoutes = require('./auth.routes');
+const protectedRoutes = require('./protected.routes'); // Adicione esta linha
 
-// Monta as rotas
 router.use('/auth', authRoutes);
-console.log(authRoutes);
+router.use('/protected', protectedRoutes); // Adicione esta linha
 
-
-// Rota de teste
 router.get('/', (req, res) => {
     res.status(200).json({
         message: 'Bem-vindo à API do projeto BRSA!'
