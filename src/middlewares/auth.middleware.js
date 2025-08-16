@@ -22,4 +22,31 @@ function isAuthenticated(req, res, next) {
   next(); // Continua para a próxima função na cadeia (o controlador)
 }
 
-module.exports = { isAuthenticated };
+// Novo middleware para verificar se o usuário é um 'employee' ou 'admin'
+function isEmployeeOrAdmin(req, res, next) {
+  if (req.user && (req.user.role === 'employee' || req.user.role === 'admin')) {
+    next();
+  } else {
+    res.status(403).json({ message: 'Acesso negado. Apenas funcionários e administradores podem realizar esta ação.' });
+  }
+}
+
+// Middleware de role-based access control (RBAC) para administradores
+function isAdmin(req, res, next) {
+  if (req.user && req.user.role === 'admin') {
+    next();
+  } else {
+    res.status(403).json({ message: 'Acesso negado. Apenas administradores podem realizar esta ação.' });
+  }
+}
+
+// Novo middleware para verificar se o usuário é um cliente
+function isCustomer(req, res, next) {
+  if (req.user && req.user.role === 'customer') {
+    next();
+  } else {
+    res.status(403).json({ message: 'Acesso negado. Apenas clientes podem realizar esta ação.' });
+  }
+}
+
+module.exports = { isAuthenticated, isAdmin, isEmployeeOrAdmin, isCustomer };
