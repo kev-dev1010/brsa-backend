@@ -41,6 +41,65 @@
       "username": "niet",
       "password": "$2b$10$PncQn97H102qU63K9Ymld.V.1PuWGoUo/vy8/qY5SuHZ/WQ2bs/kG",
       "role": "customer"
+    },
+    {
+      "id": "844ac79c-c201-4d7f-9fae-a30a1427599c",
+      "password": "$2b$10$aBH2/0Wm3QlZv9tcqZhqmuxV97HcWPSPVnxWSJjR/Agl337jS/tUO",
+      "role": "customer"
+    },
+    {
+      "id": "e0fdaeff-b3b4-4704-8548-9006c735f725",
+      "username": "testuser1755441726@example.com",
+      "password": "$2b$10$fmJUKMzhgP5bAYxBeHf5buomZJSabHGALk9OVriaz/I6LgjBcG5kS",
+      "role": "customer"
+    },
+    {
+      "id": "886fcc9c-4c0c-41ab-9409-cd9f8963fe41",
+      "username": "testuser1755441755@example.com",
+      "password": "$2b$10$xPRPyiYsco9q5xjgW8jbTeR4az7qEvHH1KihptdhSLvArf.bR5JH6",
+      "role": "customer"
+    },
+    {
+      "id": "13a0bfc9-9c61-4a03-84dc-d216a6e5254a",
+      "username": "testuser1755441937@example.com",
+      "password": "$2b$10$5jrBLzsBRnlq48d0pVxS5eU/3HwDQEDEtIMUxWLHwsWT05w0rpzAy",
+      "role": "customer"
+    },
+    {
+      "id": "97245fc2-c633-4cca-95c7-037ba5e89c70",
+      "username": "testuser1755442204@example.com",
+      "password": "$2b$10$Gi7QNXhocKH5lqrozdHBVO3P56yOIry0t.4IXq7Mn1mQfXGRLElwW",
+      "role": "customer"
+    },
+    {
+      "id": "393d3ffc-42e4-49cb-8d7a-5b871d48ed2e",
+      "username": "testuser1755442232@example.com",
+      "password": "$2b$10$oPMcD/WrAkwkOgpvq7b6pOLViNjK8YLiroYfvzRxKj.htFUM8yR0O",
+      "role": "customer"
+    },
+    {
+      "id": "4c90ec36-e483-4d71-94c0-07046da0237f",
+      "username": "testuser1755442280@example.com",
+      "password": "$2b$10$rHjpS8LrFrE/2c9XvWFy2uIb63i2kozXQA4AXmlLAfcjqo9mT13Jy",
+      "role": "customer"
+    },
+    {
+      "id": "7b43f082-c7a2-4868-b834-ab75f2090d55",
+      "username": "testuser1755442338@example.com",
+      "password": "$2b$10$2kBXki7x/FzxcKu6JbQuM.q09dBWiX3/ubTpDSbZnrgdJodMObiuC",
+      "role": "customer"
+    },
+    {
+      "id": "7a0269fe-55ec-4ec2-bd62-42d4318ab4bb",
+      "username": "testuser1755442365@example.com",
+      "password": "$2b$10$6i5giMmvMpoKS1xUZdqe8OfYjHpQYadGZs6nqthdWUbJuChdZEfcW",
+      "role": "customer"
+    },
+    {
+      "id": "3204a662-710a-4f21-848c-1f1f6c0db62b",
+      "username": "testuser1755442797@example.com",
+      "password": "$2b$10$RPt86kL6775kT83tNHEpD.Oq8y2MbEutOZc9bB3sNLpAB.Zz4MkGi",
+      "role": "customer"
     }
   ],
   "products": [

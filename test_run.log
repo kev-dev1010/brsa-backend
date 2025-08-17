@@ -1,0 +1,36 @@
+
+===================================================================
+= Testando Rota Pública: GET /api
+===================================================================
+[SUCESSO] Rota pública funcionando. Mensagem: {"message":"Bem-vindo à API do projeto BRSA!"}
+
+===================================================================
+= Testando Rotas de Produtos (Públicas)
+===================================================================
+--- Teste: GET /api/products ---
+[SUCESSO] Listagem de produtos retornada. Resposta: [{"id":"a1b2c3d4-e5f6-7890-1234-567890abcdef","name":"Vape - M4500","price":99.9,"stock":50},{"id":"b1c2d3e4-f5a6-7890-1234-567890abcde1","name":"E-Liquid - Menta","price":39.9,"stock":100},{"id":"40671d43-33bc-4ac9-88bd-4459744029e2","name":"vaca amarela","price":344.9,"stock":370},{"id":"a6ab9acd-7c4e-483d-a0ef-bfc15480a949","name":"vaca amarela","price":344.9,"stock":370}]
+--- Teste: GET /api/products/1 ---
+[SUCESSO] Produto com id=1 não encontrado (comportamento esperado se o DB estiver vazio).
+
+===================================================================
+= Testando Rotas de Autenticação
+===================================================================
+--- Teste: POST /api/auth/register (Novo Usuário) ---
+[SUCESSO] Usuário registrado com sucesso. Resposta: {"success":true,"message":"Usuário registrado com sucesso!","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMyMDRhNjYyLTcxMGEtNGYyMS04NDhjLTFmMWY2YzBkYjYyYiIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc1NTQ0Mjc5NywiZXhwIjoxNzU1NDQ2Mzk3fQ.yFYKBmtol2kd_tK-RKDm_RxzfV97lUbJGfL7ccmG_N0"}
+--- Teste: POST /api/auth/login ---
+[SUCESSO] Login realizado com sucesso. Token obtido: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMyMDRhNjYyLTcxMGEtNGYyMS04NDhjLTFmMWY2YzBkYjYyYiIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc1NTQ0Mjc5NywiZXhwIjoxNzU1NDQ2Mzk3fQ.yFYKBmtol2kd_tK-RKDm_RxzfV97lUbJGfL7ccmG_N0
+
+===================================================================
+= Testando Rotas de Usuário (Protegidas)
+===================================================================
+--- Teste: GET /api/users/profile ---
+[SUCESSO] Perfil do usuário obtido com sucesso. Resposta: {"id":"3204a662-710a-4f21-848c-1f1f6c0db62b","username":"testuser1755442797@example.com","role":"customer"}
+
+===================================================================
+= Testando Rotas de Produtos (Protegidas)
+===================================================================
+--- Teste: POST /api/products (Cliente tentando criar) ---
+[SUCESSO] Acesso negado para cliente (comportamento esperado).
+
+--- Fim dos testes ---
+Para testar os cenários de criação de produto e acesso de admin, seria necessário registrar e logar com um usuário 'employee' ou 'admin'.
